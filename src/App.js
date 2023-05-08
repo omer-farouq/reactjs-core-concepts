@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // const number = 5555;
 // const singers = [
@@ -18,30 +18,57 @@ import { useState } from 'react';
 function App() {
   return (
     <div className="App">
-      <Counter></Counter>
+      <LoadCountries></LoadCountries>
     </div>
   )     
 }
 
 
-function Counter(){
-  const [count, setCount] = useState(66);
-  const increaseCount = () => setCount(count + 1);
-  const decreaseCount = () => setCount(count - 1);
+function LoadCountries(){
+  const [countries, setCountries] = useState([]);
+  
+  useEffect( () =>{
+
+    fetch("https://restcountries.com/v3.1/all")
+    .then(res => res.json())
+    .then(data => setCountries(data))
+
+  },[])
+  return (
+    <div>
+      <h1>Visiting Every Countries of the world!!!</h1>
+      <h2>Available Countries: </h2>
+      {
+        
+      }
+    </div>
+  )
+}
+
+
+
+
+
+
+
+// function Counter(){
+//   const [count, setCount] = useState(66);
+//   const increaseCount = () => setCount(count + 1);
+//   const decreaseCount = () => setCount(count - 1);
   
   // const increaseCount = () =>{
   //   const newCount = count + 1;
   //   setCount(newCount);
   // }
-  console.log(count);
-  return (
-    <div>
-      <h1>Count: {count} </h1>
-      <button onClick={increaseCount}>Increase</button>
-      <button onClick={decreaseCount}>Decrease</button>
-    </div>
-  )
-}
+//   console.log(count);
+//   return (
+//     <div>
+//       <h1>Count: {count} </h1>
+//       <button onClick={increaseCount}>Increase</button>
+//       <button onClick={decreaseCount}>Decrease</button>
+//     </div>
+//   )
+// }
 
 
 // const nayoks = ['Ali','Anowar', 'Riyaz', 'Bapparaz', 'OmerSani', 'Kuber', 'Jamir', 'Alamgir']
