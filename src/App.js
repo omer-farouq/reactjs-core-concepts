@@ -2,8 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 
 const number = 5555;
-const singer = {name: 'Dr. Mahfuz', job: 'singer'};
-const singer2 = {name: 'Eva Rahman', work: 'music'};
+const singers = [
+  {name: 'Dr. Mahfuz', job: 'singer'},
+  {name: 'Eva Rahman', work: 'music'},
+  {name: 'Agun', job: 'Amar shopna golo'},
+  {name: 'Shuvro Dev', work: 'pathor'}
+];
 
 const singleStyle = {
   color: 'purple',
@@ -21,8 +25,12 @@ function App() {
       {/* <Person name={nayoks[0]} nayika="mousumi"></Person>
       <Person name={nayoks[1]} nayika="bubli"></Person>
       <Person name={nayoks[2]} nayika="seka"></Person> */}
-    {
+    {/* {
       nayoks.map(nayok => <Person name={nayok}></Person>)
+    } */}
+
+    {
+      singers.map(singer => <Person name={singer.name}></Person>)
     }
       <h5>New Component</h5>
       <Friend name="Imran" phone="013333"></Friend>
