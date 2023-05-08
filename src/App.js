@@ -11,12 +11,20 @@ const singleStyle = {
 }
 
 function App() {
+  const nayoks = ['Ali','Anowar', 'Riyaz', 'Bapparaz', 'OmerSani', 'Kuber', 'Jamir', 'Alamgir']
   return (
     <div className="App">
-      <Person name="omersani" nayika="mousumi"></Person>
-      <Person name="Sakib" nayika="bubli"></Person>
-      <Person name="BappRaj" nayika="seka"></Person>
-      
+    {
+
+      nayoks.map(nayok => <li>Name: {nayok}</li>)
+    }
+      {/* <Person name={nayoks[0]} nayika="mousumi"></Person>
+      <Person name={nayoks[1]} nayika="bubli"></Person>
+      <Person name={nayoks[2]} nayika="seka"></Person> */}
+    {
+      nayoks.map(nayok => <Person name={nayok}></Person>)
+    }
+      <h5>New Component</h5>
       <Friend name="Imran" phone="013333"></Friend>
       <Friend name="Abdul Kadir" phone="0393939"></Friend>
       <Friend name="FAhim" phone="0138883"></Friend>
@@ -28,8 +36,8 @@ function Person(props) {
   // console.log(props);
   return (
     <div className="container">
-      <h1>Name: {props.name}</h1>
-      <p>Nayika: {props.nayika}</p>
+      <h1>{props.name}</h1>
+      <p></p>
     </div>
   );
 }
