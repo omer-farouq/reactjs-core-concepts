@@ -18,10 +18,7 @@ const Countries = () => {
             }
             {
                 countries.map(country => <Country 
-                    country={country}
-                    
-                    
-                    
+                country={country}
                 ></Country>)
             }
         </div>

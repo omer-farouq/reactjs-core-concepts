@@ -2,14 +2,12 @@ import React from 'react';
 import './Country.css';
 
 const Country = (props) => {
-    // console.log(props.country.name.common)
-    const {name, area, region, population} = props.country
+    const {name, area, region} = props.country;
     return (
         <div className = "country">
-            <h2>Country Name: {name.common}</h2>
-            <p>Population: {population}</p>
-            <p> <small>Region: {region}</small> </p>
-            <p> <small>Area: {area}</small> </p>
+        <h2>Name:{name.common}</h2>
+           <p>Area: {area}</p>
+           <p><small>Region: {region}</small></p>
         </div>
     );
 };
